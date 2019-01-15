@@ -1,3 +1,4 @@
+import java.io.IOException;
 
 public class TesteException {
 
@@ -8,22 +9,42 @@ public class TesteException {
 			
 			metodoExceptionB();
 			
-		}catch(ExceptionA e) {
+		}catch(Exception e) {
 			
 			e.printStackTrace();
 			
-			try {
-				
-				metodoExceptionC();
-				
-			}catch(ExceptionA ec) {
-				
-				ec.printStackTrace();
-				
-			}
-
+		}
+		
+		try {
+			
+			metodoExceptionC();
+			
+		}catch(Exception e) {
+			
+			e.printStackTrace();
 			
 		}
+		
+		try {
+			
+			metodoExceptionNullPointerException();
+			
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+			
+		}
+		
+		try {
+			
+			metodoIOException();
+			
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+			
+		}
+
 
 	}
 	
@@ -39,6 +60,22 @@ public class TesteException {
 		
 
 		throw new ExceptionC("ExceptionC");
+
+		
+	}
+	
+	public static void metodoExceptionNullPointerException() throws NullPointerException {
+		
+		
+		throw new NullPointerException("metodoExceptionNullPointerException");
+
+		
+	}
+	
+	public static void metodoIOException() throws IOException {
+		
+		
+		throw new IOException("metodoIOException");
 
 		
 	}
